@@ -165,7 +165,9 @@ chkpt_stan <- function(model_code,
       dir = paste0(path, "/stan_model"),
       basename = "model"
     )
-    
+
+  } else {
+    stan_code_path <- paste0(path, "/stan_model/model.stan")
   }
   
   model_threads_name <- ifelse(.Platform$OS.type == "unix", 
@@ -241,7 +243,10 @@ chkpt_stan <- function(model_code,
   
   if (last_chkpt == total_chkpts) {
     
-    return(message("Checkpointing complete"))
+    message("Checkpointing complete")
+    returned_object <- list(args = args)
+    class(returned_object) <- "chkpt_stan"
+    return(returned_object)
     
     
   } else {
