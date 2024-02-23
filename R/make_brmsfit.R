@@ -12,11 +12,11 @@
 #' 
 #' @param data  An object of class \code{data.frame} (or one that can be coerced to that class) 
 #'             containing data of all variables used in the model.
-#'             
-#' @param prior An object of class \code{brmsprior}.
 #' 
 #' @param path Character string. The path to the folder, that is used for 
 #'             saving the checkpoints.
+#'             
+#' @param ... Additional arguments to be passed to \code{brm}.
 #' 
 #' @importFrom brms brm 
 #' 
@@ -26,7 +26,7 @@
 #' a \code{brmsfit} object.
 #' 
 #' @export
-make_brmsfit <- function(object, formula = NULL, data = NULL, prior = NULL, path) {
+make_brmsfit <- function(object, formula = NULL, data = NULL, path, ...) {
   
   if(is.null(formula)){
     formula <- object$args$formula
@@ -35,18 +35,12 @@ make_brmsfit <- function(object, formula = NULL, data = NULL, prior = NULL, path
   if(is.null(data)){
     data <- object$args$data
   }
-  
-  if(is.null(prior)){
-    fit <- brms::brm(formula = formula,
-                     data = data, 
-                     empty = TRUE)
-  } else {
 
   fit <- brms::brm(formula = formula,
                    data = data, 
-                   prior = prior,
-                   empty = TRUE)
-  }
+                   empty = TRUE,
+                   ...)
+
   file_names <- list.files(paste0(path, "/cmd_fit/"))
   
   checkpoints <- length(file_names)

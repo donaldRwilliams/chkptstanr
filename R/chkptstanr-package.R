@@ -57,13 +57,8 @@
 #'       
 #' }
 #' 
-#' 
+#' @importFrom Rdpack reprompt
 #' @references
 #' \insertAllCited{}
-#' 
-#' @docType package
-#' 
-#' 
-#' 
-#' @name chkptstanr-package
-NULL
+#' @keywords internal
+"_PACKAGE"

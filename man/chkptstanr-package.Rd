@@ -2,6 +2,7 @@
 % Please edit documentation in R/chkptstanr-package.R
 \docType{package}
 \name{chkptstanr-package}
+\alias{chkptstanr}
 \alias{chkptstanr-package}
 \title{chkptstanr: Checkpoint MCMC Sampling with 'Stan'}
 \description{
@@ -61,3 +62,18 @@ if need be, while not loosing any of the progress.
 \references{
 \insertAllCited{}
 }
+\author{
+\strong{Maintainer}: Donald Williams \email{donald.williams@nwea.org}
+
+Authors:
+\itemize{
+  \item Tyler Matta \email{tyler.matta@nwea.org}
+}
+
+Other contributors:
+\itemize{
+  \item NWEA \email{tyler.matta@nwea.org} [copyright holder]
+}
+
+}
+\keyword{internal}

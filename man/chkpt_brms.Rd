@@ -17,6 +17,7 @@ chkpt_brms(
   control = NULL,
   brmsfit = TRUE,
   seed = 1,
+  stop_after = NULL,
   path,
   ...
 )
@@ -73,6 +74,10 @@ For a comprehensive overview see \code{\link[rstan]{stan}}.}
 
 \item{seed}{(positive integer). The seed for random number generation to
 make results reproducible.}
+
+\item{stop_after}{(positive integer). The number of checkpoints to sample
+before stopping. If \code{NULL}, then all checkpoints are
+sampled (defaults to \code{NULL}). Used only for testing}
 
 \item{path}{Character string. The path to the folder, that is used for
 saving the checkpoints.}

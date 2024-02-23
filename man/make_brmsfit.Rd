@@ -4,7 +4,7 @@
 \alias{make_brmsfit}
 \title{Make \code{brmsfit} Object}
 \usage{
-make_brmsfit(object, formula = NULL, data = NULL, prior = NULL, path)
+make_brmsfit(object, formula = NULL, data = NULL, path, ...)
 }
 \arguments{
 \item{object}{An object of class \code{chkpt_brms}}
@@ -16,10 +16,10 @@ Further information can be found in  \code{\link[brms]{brmsformula}}.}
 \item{data}{An object of class \code{data.frame} (or one that can be coerced to that class)
 containing data of all variables used in the model.}
 
-\item{prior}{An object of class \code{brmsprior}.}
-
 \item{path}{Character string. The path to the folder, that is used for
 saving the checkpoints.}
+
+\item{...}{Additional arguments to be passed to \code{brm}.}
 }
 \value{
 An object of class \code{brmsfit}
